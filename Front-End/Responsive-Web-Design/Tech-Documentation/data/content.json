@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Create",
+    "desc": "Package.json file",
+    "text": "First, create a directory where your application will live. Enter the following commands and answer the questions to create the initial structure for your new project and install the driver dependency. You should see NPM download a lot of files. Once it’s done you’ll find all the downloaded packages under the node_modules directory.",
+    "code": "mkdir myproject <br> cd myproject <br> npm init <br> npm install mongodb --save"
+  },
+  {
+    "title": "Start",
+    "desc": "A MongoDB Server",
+    "text": "Download the right MongoDB version from MongoDB. Create a database directory (in this case under /data). Install and start a mongod process. You should see the mongod process start up and print some status information.",
+    "code": "mongod --dbpath=/data"
+  },
+  {
+    "title": "Connect",
+    "desc": "MongoDB Connection",
+    "text": "Create a new app.js file and add the following code to try out some basic CRUD operations using the MongoDB driver. Add code to connect to the server and the database myproject: Run your app from the command line with: The application should print Connected successfully to server to the console.",
+    "code": "const MongoClient = require('mongodb').MongoClient; <br> const assert = require('assert'); <br> const url = 'mongodb://localhost:27017'; <br> const dbName = 'myproject'; <br> const client = new MongoClient(url);  <br><br> client.connect(function(err) { <br> &emsp; assert.equal(null, err); <br> &emsp; console.log('Connected successfully to server'); <br> &emsp; const db = client.db(dbName); <br> &emsp; client.close(); <br> });"
+  },
+  {
+    "title": "Insert",
+    "desc": "Insert a Document",
+    "text": "Add to app.js the following function which uses the insertMany method to add three documents to the documents collection. ",
+    "code": "const insertDocuments = function(db, callback) { <br> const collection = db.collection('documents'); <br><br> collection.insertMany([{a : 1}, {a : 2}, {a : 3}], function(err, result) { <br> &emsp;  assert.equal(err, null); <br> &emsp;  assert.equal(3, result.result.n);<br> &emsp;  assert.equal(3, result.ops.length); <br> &emsp;  console.log('Inserted 3 documents into the collection');<br> &emsp;  callback(result);<br>});<br>}"
+  },
+  {
+    "title": "Find All",
+    "desc": "Find All Documents",
+    "text": "Add a query that returns all the documents. This query returns all the documents in the documents collection. ",
+    "code": "const findDocuments = function(db, callback) { <br>&emsp;const collection = db.collection('documents'); <br><br>&emsp;collection.find({}).toArray(function(err, docs) {<br> &emsp;&emsp; assert.equal(err, null);<br> &emsp;&emsp;  console.log('Found the following records');<br> &emsp;&emsp; console.log(docs) <br> &emsp;&emsp; callback(docs);<br>&emsp;});<br>}"
+  },
+  {
+    "title": "Filter",
+    "desc": "Filter Documents",
+    "text": "Add a query filter to find only documents which meet the query criteria. Only the documents which match 'a' : 3 should be returned.",
+    "code": "const findDocuments = function(db, callback) { <br>&emsp;const collection = db.collection('documents');<br> <br>&emsp;collection.find({'a': 3}).toArray(function(err, docs) {<br> &emsp;&emsp; assert.equal(err, null);<br> &emsp;&emsp; console.log('Found the following records');<br> &emsp;&emsp; console.log(docs);<br> &emsp;&emsp; callback(docs);<br>&emsp;});<br>}"
+  },
+  {
+    "title": "Update",
+    "desc": "Update a document",
+    "text": "The following operation updates a document in the documents collection. The method updates the first document where the field a is equal to 2 by adding a new field b to the document set to 1.",
+    "code": "const updateDocument = function(db, callback) { <br>&emsp;const collection = db.collection('documents');<br> <br>&emsp;collection.updateOne({ a : 2 }, { $set: { b : 1 } }, function(err, result) {<br> &emsp;&emsp; assert.equal(err, null);<br> &emsp;&emsp; assert.equal(1, result.result.n);<br> &emsp;&emsp; console.log('Updated the document with the field a equal to 2');<br> &emsp;&emsp; callback(result);<br>&emsp;}); <br>}"
+  },
+  {
+    "title": "Remove",
+    "desc": "Remove a document",
+    "text": "Remove the document where the field a is equal to 3.",
+    "code": "const removeDocument = function(db, callback) { <br>&emsp;const collection = db.collection('documents');<br> <br>&emsp;collection.deleteOne({ a : 3 }, function(err, result) {<br> &emsp;&emsp; assert.equal(err, null);<br> &emsp;&emsp; assert.equal(1, result.result.n);<br> &emsp;&emsp; console.log('Removed the document with the field a equal to 3');<br> &emsp;&emsp; callback(result);<br>&emsp;});<br>}"
+  },
+  {
+    "title": "Index",
+    "desc": "Index a Collection",
+    "text": "Indexes can improve your application’s performance. The following function creates an index on the a field in the documents collection. Add the indexCollection method to your app:",
+    "code": "const indexCollection = function(db, callback) {<br>&emsp;db.collection('documents').createIndex({ 'a': 1 }, null, function(err, results) {<br> &emsp;&emsp; console.log(results);<br> &emsp;&emsp; callback();<br>&emsp;});<br>};<br><br>const MongoClient = require('mongodb').MongoClient;<br>const assert = require('assert'); <br>const url = 'mongodb://localhost:27017';<br>const dbName = 'myproject';<br>const client = new MongoClient(url); <br><br>client.connect(function(err) {<br> &emsp; assert.equal(null, err);<br> &emsp; console.log('Connected successfully to server');<br> &emsp; const db = client.db(dbName);<br> &emsp; insertDocuments(db, function() {<br> &emsp; &emsp; indexCollection(db, function() {<br> &emsp; &emsp; &emsp; client.close();<br> &emsp; &emsp;});<br> &emsp; });<br>});"
+  }
+]

@@ -1,0 +1,133 @@
+body {
+  background-color:#a54657;
+  padding: 40px;
+  color: white;
+}
+.header {
+  height: 100px;
+}
+.div2 {
+  margin: auto;
+  padding: 20px 0px;
+}
+hr {
+  width:50%;
+}
+.div-left {
+  display: inline-block;
+  width: 18%;
+  padding: 10px;
+}
+.div-left2 {
+  display: inline-block;
+  width: 57%;
+}
+.div-left3 {
+  display: inline-block;
+  width: 57%;
+  position: relative;
+  bottom: 35px;
+}
+.div-left4 {
+  display: inline-block;
+  width: 57%;
+  position: relative;
+  bottom: 85px;
+}
+.div-right {
+  display: inline-block;
+  padding: 10px;
+}
+.div-right2 {
+  display: inline-block;
+  width: 20%;
+  text-align: left;
+  font-size: 20px;
+  vertical-align: to;
+}
+.content {
+  background-color: #7f3645;
+  border-radius: 10px;
+  padding: 15px;
+  width: 75%;
+  margin: auto; 
+}
+.title {
+  text-align:center;
+  color: white;
+}
+.description {
+  border-radius:2px;
+  font-size:20px;
+  text-align:center;
+}
+.survey-form {
+  text-align: center;
+}
+.name {
+  border-radius: 4px;
+  padding: 3px;
+}
+.email {
+  border-radius: 4px;
+  padding: 3px;
+}
+.number {
+  border-radius: 4px;
+  padding: 3px;
+}
+.name-label {
+  font-size: 20px;
+}
+.email-label {
+  font-size: 20px;
+}
+.number-label {
+  font-size: 20px;
+}
+.dropdown {
+  cursor: pointer;
+}
+.dropdown {
+  border-radius: 5px;
+  display: inline-block;
+  padding: 7px;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.submit {
+  cursor: pointer;
+  padding: 8px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f038;
+  color: white;
+  font-size: 20px;
+}
+.submit:hover {
+  box-shadow: 2px 2px 10px black;
+}
+textarea {
+  width: 60%;
+  height: 70px;
+  border-radius: 4px;
+  margin: 25px;
+}
+.radio {
+  cursor: pointer;
+  margin: 10px;
+}
+.checkbox {
+  cursor: pointer;
+  margin: 10px;
+}
+legend {
+  font-size: 20px;
+  padding: 10px;
+}
+fieldset {
+  padding: 40px 0px 40px 0px;
+}
+p {
+  font-size: 18px;
+}

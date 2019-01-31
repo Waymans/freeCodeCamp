@@ -1,0 +1,60 @@
+body {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+h1{
+  position:absolute;
+  top:40px;
+}
+.maindiv{
+  width: 720px;
+  margin: 100px auto auto auto;
+}
+.breakDiv{ 
+  background: white;
+  border: 1px dotted orange;
+  float: left;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  width: 198px;
+}
+.sessionDiv{
+  background: white;
+  border: 1px dotted orange;
+  float: left;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  width: 198px;
+}
+.displayDiv{
+  background: white;
+  border: 1px dotted orange;
+  float: left;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  width: 198px;
+}
+.display{
+  font-size: 60px;
+}
+button{
+  font-size: 20px;
+  background: white;
+  border-radius: 5px;
+}
+button:hover{
+ cursor: pointer; 
+ background: lightsteelblue;
+}
+.clock{
+  background: white; 
+}

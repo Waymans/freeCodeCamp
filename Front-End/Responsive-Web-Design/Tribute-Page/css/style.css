@@ -1,0 +1,139 @@
+.content {
+  background-color: white;
+  margin: auto;
+}
+body {
+  margin: 0px;
+  font-family: 'Prompt', sans-serif;
+}
+.header {
+  text-align: center;
+  margin: 300px auto;
+}
+.title {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  padding: 20px;
+  letter-spacing: 10px;
+  color: white;
+  border: 3px solid white;
+  width: 40%;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  font-family: 'Rajdhani', cursive;
+}
+h3 {
+  font-size: 17px;
+  text-align: center;
+}
+.list {
+  width: 80%;
+  margin: auto;
+  background-color: lightgray;
+  border: 1px solid black;
+  word-spacing:3px;
+  padding:10px;
+}
+.div1 {
+  font-size:20px;
+  margin: 5% 10%;
+}
+span {
+  text-align: center;
+  font-size:20px
+}
+.tribute-info {
+  font-size: 20px;
+  margin: 5% 10%;
+}
+.tribute-link:hover {
+  color: green;
+}
+ul {
+  font-size: 20px;
+}
+.img-div {
+  text-align:center;
+  justify-content:center;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left 0;
+}
+.image {
+  max-width:100%;
+  display:block;
+  height:auto;
+  z-index: -1;
+}
+.img-caption {
+  text-align: center;
+  padding-bottom: 0px;
+}
+.img2-div {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.image2{
+  width: 100%;
+  height: auto;
+}
+.quote{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -50%);
+  font-size: 20px;
+}
+i{
+  margin: 10px;
+}
+p {
+  text-indent:30px;
+  font-size:20px;
+  margin:30px;
+  line-height:2
+}
+.pics{
+  width: 100%;
+  margin: 5% auto;
+  text-align: center;
+}
+div.gallery {
+  border: 1px solid #ccc;
+  width: 30%;
+  display: inline-block;
+  margin: 5px;
+}
+div.gallery:hover {
+  border: 1px solid black;
+}
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+div.desc {
+  transition: opacity 1s ease-out;
+  opacity: 0; 
+  padding: 15px;
+  text-align: center;
+}
+
+div.desc:hover {
+  opacity: 1;
+}
+section{
+  z-index:2;
+}
+footer{
+  margin: 10px;
+  padding: 10px;
+  z-index:2;
+}
+hr {
+  width: 80%
+}

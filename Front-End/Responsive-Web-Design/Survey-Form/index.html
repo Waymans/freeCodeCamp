@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 id="title" class="title">Survey Form</h1><hr>
+    </header>
+    <main id="div-main" class="content">
+      <h2 id="description" class="description">Physical Activity</h2>
+      <section class="form">
+        <form id="survey-form" class="survey-form" method="post">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div>
+            <div class="div-left"><label id="name-label" class="name-label">*Name:</label></div>
+            <div class="div-right"><input id="name" class="name" type="text" name="name" required placeholder="Your name"></div>
+          </div>
+          <div>
+            <div class="div-left"><label id="number-label" class="number-label">*Age:</label></div>
+            <div class="div-right"><input id="number" class="number" type="number" name="age" required placeholder="Your age" min="18" max="130"></div>
+          </div>
+          <div>
+            <div class="div-left"><label id="email-label" class="email-label">*E-mail:</label></div>
+            <div class="div-right"><input id="email" class="email" type="email" name="email" required placeholder="Your email"></div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Activity Type and Frequency</legend>
+          <div class="div2">
+            <div class="div-left2">
+              <p>How many times per week do you engage in physical activity?</p>
+            </div>
+            <div class="div-right2"><select id="dropdown" class="dropdown" name="hobbies">
+              <option disabled="" value="">Select an option</option>
+              <option value="0x">0x week</option>
+              <option value="1x">1x week</option>
+              <option value="2x">2x week</option>
+              <option value="3x">3x week</option>
+              <option value="4x">4x week</option>
+              <option value="5x">5x week</option>
+              <option value="6x">6x week</option>
+              <option value="7x">7x week</option>
+              <option value="8x">More than 7</option>
+              </select>
+            </div>
+          </div>
+          <div class="div2">
+            <div class="div-left3">
+              <p>During what time of the day do you prefer physical exertion?</p>
+            </div>
+            <div class="div-right2">
+              <input class="radio" type="radio" name="time" value="morning" checked>Morning<br>
+              <input class="radio" type="radio" name="time" value="afternoon">Afternoon<br>
+              <input class="radio" type="radio" name="time" value="evening">Evening
+            </div>
+          </div>
+          <div class="div2">
+            <div class="div-left4">
+              <p>What kind of exercise(s) do you find yourself pursuing often?</p>
+            </div>
+            <div class="div-right2">
+              <input class="checkbox" type="checkbox" name="type" value="run">Running<br>
+              <input class="checkbox" type="checkbox" name="type" value="weights">Weightlifting<br>
+              <input class="checkbox" type="checkbox" name="type" value="cycling">Cycling<br>
+              <input class="checkbox" type="checkbox" name="type" value="swim">Swimming<br>
+              <input class="checkbox" type="checkbox" name="type" value="sports">Sports<br>
+              <input class="checkbox" type="checkbox" name="type" value="other">Other
+            </div>
+          </div>
+        </fieldset>
+        <div>
+          <textarea name="message" max-length="250" placeholder="Comment here..."></textarea>
+        </div>
+        <div>
+          <button id="submit" class="submit" type="submit">Submit</button>
+          <input class="submit" type="reset">
+        </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
