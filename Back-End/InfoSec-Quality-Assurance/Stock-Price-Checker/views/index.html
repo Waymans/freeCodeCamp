@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Price Checker</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/style.css">
+  </head>
+  <body>
+    <div class="container1">    
+    <header>
+      <h1>
+        Nasdaq Stock Price Checker
+      </h1>
+    </header>
+    <hr>
+    
+    
+    <div class="container">
+      <form  id="testForm" class="form-inline" action="/action_page.php">
+        <div class="form-group">
+          <label for="email">Get single price and total likes.</label>
+          <input type="input" class="form-control" id="stock" placeholder="goog" name="stock" required>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="like" id="like1">Like?</label>
+        </div>
+        <button type="submit" class="btn btn-success">Check</button>
+      </form>
+      <form id="testForm2" class="form-inline" action="/action_page.php">
+        <div class="form-group">
+          <label for="stock1">Compare and get relative likes.</label>
+          <input type="input" class="form-control" id="stock1" placeholder="goog" name="stock1" required>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="stock2">Stock2</label>
+          <input type="input" class="form-control" id="stock2" placeholder="msft" name="stock2" required>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember" id="like2">Like?</label>
+        </div>
+        <button type="submit" class="btn btn-success">Check</button>
+      </form>
+      <div class="table-responsive">          
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Stock#</th>
+              <th>Ticker</th>
+              <th>Price</th>
+              <th id="Tlikes">Likes</th>
+            </tr>
+          </thead>
+          <tbody id="result">
+            <tr id="row1" class="hide">
+              <td>1</td>
+              <td id="Rstock1"></td>
+              <td id="Rprice1"></td>
+              <td id="Rlikes1"></td>
+            </tr>
+            <tr id="row2" class="hide">
+              <td>2</td>
+              <td id="Rstock2"></td>
+              <td id="Rprice2"></td>
+              <td id="Rlikes2"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      
+      
+        
+    <hr> 
+    <code id="jsonResult"></code>
+    <p class="iex">
+      Data provided for free by <a href="https://iextrading.com/developer/" target="_blank">IEX</a>. View <a href="https://iextrading.com/api-exhibit-a" target="_blank">IEX’s Terms of Use</a>. 
+      Json will disappear if IEX updates the data.
+    </p>
+    
+    <hr style="margin-top: 0px">
+    <div id="userstories" style="margin-top: 30px">
+      <h3>User Stories</h3>
+      <ol>
+        <li>Set the content security policies to only allow loading of scripts and css from your server.</li>
+        <li>I can <b>GET</b> <code>/api/stock-prices</code> with form data containing a Nasdaq <i>stock</i> ticker and recieve back an object <i>stockData</i>.</li>
+        <li>In <i>stockData</i>, I can see the <i>stock</i>(string, the ticker), <i>price</i>(decimal in string format), and <i>likes</i>(int).</li>
+        <li>I can also pass along field <i>like</i> as <b>true</b>(boolean) to have my like added to the stock(s). Only 1 like per ip should be accepted.</li>
+        <li>If I pass along 2 stocks, the return object will be an array with both stock's info but instead of <i>likes</i>, it will display <i>rel_likes</i>(the difference between the likes on both) on both.</li>
+        <li>A good way to receive current price is the following external API(replacing 'GOOG' with your stock): <code>https://finance.google.com/finance/info?q=NASDAQ%3aGOOG</code></li>
+        <li>All 5 functional tests are complete and passing.</li>
+      </ol>
+      <h3>Example usage:</h3>
+      <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog"><code>/api/stock-prices?stock=goog</code></a><br>
+      <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog&like=true"><code>/api/stock-prices?stock=goog&amp;like=true</code></a><br>
+      <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog&stock=msft"><code>/api/stock-prices?stock=goog&amp;stock=msft</code></a><br>
+      <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog&stock=msft&like=true"><code>/api/stock-prices?stock=goog&amp;stock=msft&amp;like=true</code></a><br>
+      <h3>Example return:</h3>
+      <code>{"stockData":{"stock":"GOOG", "price":"786.90", "likes":1}}</code><br>
+      <code>{"stockData":[{"stock":"MSFT", "price":"62.30", "rel_likes":-1}, {"stock":"GOOG", "price":"786.90", "rel_likes":1}]}</code>
+    </div>
+    <div class="footer">
+      <p>
+        Check out my other projects on <a href="https://www.codepen.io/Waymans" target="_blank">Codepen</a>.
+      </p>
+    </div>
+    </div>
+    <script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+    <script>
+      $('#testForm')[0].addEventListener('submit', (e) => {
+        e.preventDefault();
+        const stock = $('#stock')[0].value;
+        const like1 = $('#like1')[0].checked;
+        fetch('/api/stock-prices?stock='+stock+'&like='+like1)
+          .then(res=>res.json())
+          .then(res=>{
+            $('#jsonResult')[0].innerHTML = JSON.stringify(res, null, ' ');
+            $('#Rstock1')[0].html(res.stockData.stock);
+            $('#Rprice1')[0].html(res.stockData.price);
+            $('#Rlikes1')[0].html(res.stockData.likes);
+          
+            /*// show first row but hide second
+              $("#row1").removeClass("hide");
+              $("#row2").addClass("hide");
+
+              // change like col back
+              $("#Tlikes").text("Likes");
+
+              // clear inputs
+              $(".form-control").val("");
+              $("input[type=checkbox]").removeAttr("checked");*/
+          })
+          .catch(err=>{throw err});
+      });
+      $('#testForm2')[0].submit((e) => {
+        e.preventDefault();
+        const stock1 = $('#stock1')[0].value;
+        const stock2 = $('#stock2')[0].value;   
+        const like2 = $('#like2')[0].checked;
+        $.getJSON('/api/stock-prices?stock='+stock1+'&stock='+stock2+'&like='+like2, function(res) {
+            $('#jsonResult')[0].innerHTML = JSON.stringify(res, null, ' ');
+            $('#Rstock1')[0].html(res.stockData[0].stock);
+            $('#Rprice1')[0].html(res.stockData[0].price);
+            $('#Rlikes1')[0].html(res.stockData[0].rel_likes);
+            $('#Rstock2')[0].html(res.stockData[1].stock);
+            $('#Rprice2')[0].html(res.stockData[1].price);
+            $('#Rlikes2')[0].html(res.stockData[1].rel_likes);
+            $('#Tlikes')[0].html('rel_likes');
+          
+            /*// show both rows
+              $("#row1, #row2").removeClass("hide");
+
+              // change like col text
+              $("#Tlikes").text("Rel Likes");
+
+              // clear inputs
+              $(".form-control").val("");
+              $("input[type=checkbox]").removeAttr("checked");*/
+          })
+          .catch(err=>{throw err});
+      });
+    </script>
+  </body>
+</html>

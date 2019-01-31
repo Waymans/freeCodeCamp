@@ -1,0 +1,41 @@
+/****** Main Styling ******/
+
+body {
+  font-family: 'Monospace', sans-serif;
+  font-size: 16px;
+  color: #222;
+  background-color: lightsteelblue;
+  line-height: 2em
+}
+
+h1 { 
+  text-indent: 50px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+li {
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: 40px;
+  text-indent: 50px;
+}
+
+a {
+  color: maroon;
+}
+a:hover {
+  color: olive 
+}
+
+.container {
+  width: 80%;
+  box-shadow: 5px 5px 5px black;
+  margin: 70px auto;
+  padding: 30px 10px 30px 10px;
+  background-color: white;
+}

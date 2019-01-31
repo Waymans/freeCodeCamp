@@ -1,0 +1,118 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  padding: 0px;
+}
+
+h1, .link { 
+  text-align: center;
+}
+
+.divs {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  min-width: 40%;
+}
+
+.flex {
+  display: flex; 
+}
+
+.row1 {
+  padding-left: 30px;
+  height: auto;
+  width: 50%;
+}
+
+.row2 {
+  padding: 0px;
+  height: auto;
+  width: 50%;
+}
+
+.cell {
+  height: 165px; 
+  padding: 10px;
+}
+
+.users {
+  padding: 20px 30px 10px 50px; 
+  line-height: 1.2em;
+}
+
+.replies {
+  margin-left: 20px;
+}
+
+.reply {
+  border: 1px dotted black;
+  margin: 20px;
+  padding: 10px;
+}
+
+.newReply {
+  margin: 10px 10px 10px 20px;
+}
+
+.thread {
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.id {
+  font-size: 10.5px;
+}
+
+#submitNewThread {
+  margin: 0px;
+}
+
+.board1 {
+  padding-left: 10%;
+}
+
+.board2 {
+  width: 80%; 
+  margin: auto;
+}
+
+.main {
+  background: lightsteelblue; 
+}
+
+input { 
+  border-radius: 2px; 
+  padding: 2px;
+}
+
+.btn {
+  padding: 3px; 
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
+}
+
+.delete { 
+  background: lightcoral; 
+}
+
+.report { 
+  background: khaki; 
+}
+
+.submit { 
+  background: lightgreen; 
+}
+
+a:hover { 
+  color: purple
+}

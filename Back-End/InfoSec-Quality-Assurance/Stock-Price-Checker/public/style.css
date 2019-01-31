@@ -1,0 +1,75 @@
+
+/****** Main Styling ******/
+
+body {
+  font-family: 'Monospace', sans-serif;
+  font-size: 16px;
+  color: #222;
+  background-color: white;
+  line-height: 2em
+}
+
+h1 {
+  text-align: center; 
+}
+
+li {
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: 40px;
+}
+
+a {
+  color: maroon;
+}
+
+a:hover {
+  color: olive 
+}
+
+code {
+  font-size: 15px;
+}
+
+.iex {
+  font-size: 12px; 
+  line-height: 20px;
+  text-align: center;
+}
+
+.container1 {
+  margin: 70px auto;
+  width: 80%;
+  padding: 30px 20px 30px 20px;
+  border: 3px dotted maroon;
+}
+
+.flex {
+  display: flex;
+}
+
+.box {
+  margin: 10px 70px; 
+}
+
+input {
+  border-radius: 2px; 
+  padding: 3px;
+}
+
+input:focus {
+  background: gray;
+  color: white
+}
+
+button {
+  border-radius: 2px; 
+  padding: 3px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: lightgray;
+}
