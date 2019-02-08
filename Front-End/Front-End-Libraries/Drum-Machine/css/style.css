@@ -1,7 +1,7 @@
 body{
   padding-top: 40px;
   color: #d3d5d7;
-  background: #254441;
+  background: black;
   font-family: 'Orbitron', sans-serif;
 }
 .main-div{
@@ -16,7 +16,7 @@ body{
   border-radius: 5%;
 }
 .drum-pad {
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Orbitron', sans-serif;
   float: left;
   background: #ef3e36;
@@ -30,17 +30,15 @@ body{
   background: #17bebb;
 }
 .drum-pad:hover{
-  background: #fad8d6;
+  background: white;
   cursor: pointer;
 }
 #display{
-  font-size: 30px;
+  font-size: 20px;
   margin: 20px auto 20px auto;
   width: 150px;
   color: black;
   min-height: 30px;
-  background: #fad8d6;
+  background: white;
   border-radius: 5px;
-}
-.clip{ 
 }

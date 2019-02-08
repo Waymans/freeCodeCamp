@@ -78,48 +78,48 @@ class DrumKit extends React.Component {
 const sounds = [{
   keys: 'Q',
   keyCodes: 81,
-  id: 'Drum1',
-  url: 'http://www.sounds.beachware.com/2illionzayp3may/wlyjbzzu/BASEDRM2.mp3'
+  id: 'Heater_1',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 },{
   keys: 'W',
   keyCodes: 87,
-  id: 'Drum2',
-  url: 'http://www.sounds.beachware.com/2illionzayp3may/opaz/THUD.mp3'
+  id: 'Heater_2',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
 },{
   keys: 'E',
   keyCodes: 69,
-  id: 'Drum3',
-  url: 'http://vincentbernay.free.fr/free-percussions-loops/Conga1.mp3'
+  id: 'Heater_3',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
 },{
   keys: 'A',
   keyCodes: 65,
-  id: 'Snare1',
-  url: 'http://dight310.byu.edu/media/audio/FreeLoops.com/3/3/Free%20Drum%20Snare%2019-993-Free-Loops.com.mp3'
+  id: 'Heater_4',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
 },{
   keys: 'S',
   keyCodes: 83,
-  id: 'Snare2',
-  url: 'http://dight310.byu.edu/media/audio/FreeLoops.com/3/3/Free%20Drum%20Snare%2014-978-Free-Loops.com.mp3'
+  id: 'Heater_5',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
 },{
   keys: 'D',
   keyCodes: 68,
-  id: 'Snare3',
-  url: 'http://dight310.byu.edu/media/audio/FreeLoops.com/3/3/Free%20Drum%20Snare%202-942-Free-Loops.com.mp3'
+  id: 'Dsc_Oh',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
 },{
   keys: 'Z',
   keyCodes: 90,
-  id: 'Clap',
-  url: 'http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Lil%20John%20Crunk%20Clap3-2136-Free-Loops.com.mp3'
+  id: 'Kick_n_Hat',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
 },{
   keys: 'X',
   keyCodes: 88,
-  id: 'Kick',
-  url: 'http://dight310.byu.edu/media/audio/FreeLoops.com/1/1/BeatBox%20Kick%20Sound-21504-Free-Loops.com.mp3'
+  id: 'RP4_Kick',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
 },{
   keys: 'C',
   keyCodes: 67,
-  id: 'Moog',
-  url: 'http://s1download-universal-soundbank.com/mp3/sounds/20239.mp3'
+  id: 'Cev_H2',
+  url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
 }]
 
 
