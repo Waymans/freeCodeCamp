@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anonymous Message Board!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fahkwang" rel="stylesheet"> 
+  </head>
+  <body>
+    
+    <section id="overlay">
+      <div id="text">
+        <h2>User Stories</h2>
+        <span>I originally passed all of these user stories in order to complete the challenge but have since updated the app more for design purposes. I will leave them, as is, for the curious.
+        Most of them are still followed except for the need of inputing thread/reply_id's.</span>
+          <ol>
+            <li>Only allow your site to be loading in an iFrame on your own pages.</li>
+            <li>Do not allow DNS prefetching.</li>
+            <li>Only allow your site to send the referrer for your own pages.</li>
+            <li>I can <b>POST</b> a thread to a specific message board by passing form data <code>text</code> and <code>delete_password</code> to <i>/api/threads/{board}</i>.(Recomend res.redirect to board page /b/{board})
+            Saved will be <code>_id</code>, <code>text</code>, <code>created_on</code>(date&amp;time), <code>bumped_on</code>(date&amp;time, starts same as created_on), <code>reported</code>(boolean), <code>delete_password</code>, &amp; <code>replies</code>(array).</li>
+            <li>I can <b>POST</b> a reply to a thread on a specific board by passing form data <code>text</code>, <code>delete_password</code>, &amp; <code>thread_id</code> to <i>/api/replies/{board}</i> and it will also update the bumped_on date to the comments date.(Recomend res.redirect to thread page /b/{board}/{thread_id})
+            In the thread's 'replies' array will be saved <code>_id</code>, <code>text</code>, <code>created_on</code>, <code>delete_password</code>, &amp; <code>reported</code>.</li>
+            <li>I can <b>GET</b> an array of the most recent 10 bumped threads on the board with only the most recent 3 replies from <i>/api/threads/{board}</i>. The <code>reported</code> and <code>delete_passwords</code> fields will not be sent.</li>
+            <li>I can <b>GET</b> an entire thread with all it's replies from <i>/api/replies/{board}?thread_id={thread_id}</i>. Also hiding the same fields.</li>
+            <li>I can delete a thread completely if I send a <b>DELETE</b> request to <i>/api/threads/{board}</i> and pass along the <code>thread_id</code> &amp; <code>delete_password</code>. (Text response will be 'incorrect password' or 'success')</li>
+            <li>I can delete a post(just changing the text to '[deleted]') if I send a <b>DELETE</b> request to <i>/api/replies/{board}</i> and pass along the <code>thread_id</code>, <code>reply_id</code>, &amp; <code>delete_password</code>. (Text response will be 'incorrect password' or 'success')</li>
+            <li>I can report a thread and change it's reported value to true by sending a <b>PUT</b> request to <i>/api/threads/{board}</i> and pass along the <code>thread_id</code>. (Text response will be 'success')</li>
+            <li>I can report a reply and change it's reported value to true by sending a <b>PUT</b> request to <i>/api/replies/{board}</i> and pass along the <code>thread_id</code> &amp; <code>reply_id</code>. (Text response will be 'success')</li>
+            <li>Complete functional tests that wholely test routes and pass.</li>
+          </ol>       
+          <div class="tables">
+            <table>
+              <tr>
+                <th class="dark"></th>
+                <th class="dark">GET</th>
+                <th class="dark">POST</th>
+                <th class="dark">PUT</th>
+                <th class="dark">DELETE</th>
+              </tr>
+              <tr>
+                <td class="dark">/api/threads/{board}</td>
+                <td>list recent threads</td>
+                <td>create thread</td>
+                <td>report thread</td>
+                <td>delete thread with password</td>
+              </tr>
+              <tr>
+                <td class="dark">/api/replies/{board}</td>
+                <td>show all replies on thread</td>
+                <td>create reply on thread</td>
+                <td>report reply on thread</td>
+                <td>change reply to '[delete]' on thread</td>
+              </tr>
+            </table>
+          </div>
+      </div>
+    </section>   
+    
+    <main>
+          <div class="container center" id="testui"> 
+            <header>
+              <h1>Anonymous Message Board</h1>
+            </header>
+            <div class="button">
+              <button id="on">User Stories</button>
+            </div>
+            <div class="board">
+              <h3>Don't see a board you like? Make a new one!</h3>
+              <form action="/api/threads/test" method="post" id="newThread" class="new">
+                <input type="text" placeholder="New board" id="board1" name="board" required><br>
+                <textarea type="text" placeholder="New thread..." name="text" required></textarea><br>
+                <input type="text" placeholder="Password to delete" name="delete_password" required><br>
+                <input type="submit" value="Submit" class="btn submit big">
+              </form>
+            </div>  
+            <h3>Current boards:</h3>
+            <div class="board" id="boardList"></div>
+      </div>
+      <footer class="center">Check out my other projects on <a href="https://github.com/waymans" target="_blank">GitHub</a>.</footer>
+    </main>
+    <!--<script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		        crossorigin="anonymous"></script>
+    <script src="/public/index.js"></script>
+  </body>
+</html>

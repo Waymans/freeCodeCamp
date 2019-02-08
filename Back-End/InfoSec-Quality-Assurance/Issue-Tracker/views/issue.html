@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issue Page</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://hyperdev.com/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
+          crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="/public/style.css">-->
+  </head>
+  <body>
+    
+    <section class="container p-0">
+    <header class="text-center">
+      <h1 id="projectTitle"></h1>
+    </header>
+    <center>
+      <div id="submitNewIssue">
+        <br>
+        <h3>Submit a new issue:</h3>
+        <form id="newIssue" method="post" action="/api/">
+          <div class="row m-0">
+            <div class="col-sm p-0">
+              <div class="input-group">
+                <input type="text" class="form-control" name="issue_title" placeholder="*Title" required>
+              </div>
+      	      <div class="col-sm p-0">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Assigned to" name="assigned_to">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm p-0">
+              <div class="input-group">
+                <input type="text" class="form-control" name="created_by" placeholder="*Created by" required>
+              </div>
+        	    <div class="col-sm p-0">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Status text" name="status_text">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm p-0">
+              <div class="input-group">
+                <textarea class="form-control" name="issue_text" placeholder="*Text" required></textarea>
+              </div>
+            </div>
+          </div>  
+          <button type="submit" class="btn btn-block btn-success">Submit</button>
+        </form>
+      </div>
+      
+      <div id="issueDisplay"></div>
+      
+      <hr>
+    </center>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" 
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" 
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" 
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" 
+            crossorigin="anonymous"></script>
+    <script src="/public/issue.js"></script>
+  </body>
+</html>

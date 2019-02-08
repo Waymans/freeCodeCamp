@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Price Checker</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/style.css">
+  </head>
+  <body> 
+    <section class="outer">
+      <div class="inner">
+      <header>Nasdaq Stock Price Checker</header>
+        
+        <!-- The Forms -->
+      <div class="container">
+        <form id="testForm">
+          <label for="stock">Get single price and total likes:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <label class="sr-only" for="like1">Like?</label>
+        	      <input type="checkbox" id="like1" name="like" data-toggle="popover" data-content="Liked!">
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="goog" name="stock" id="stock">
+          </div>  
+          <button type="submit" class="btn btn-block btn-primary">Check</button>
+        </form> 
+        <form id="testForm2">
+          <label for="stock1">Compare and get relative likes:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <label class="sr-only" for="like2" >Like both?</label>
+        	      <input type="checkbox" id="like2" name="like" data-toggle="popover" data-content="Liked Both!">
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="aapl" name="stock" id="stock1">
+            <input type="text" class="form-control" placeholder="msft" name="stock" id="stock2">
+          </div>  
+          <button type="submit" class="mb-1 btn btn-block btn-primary">Check</button>
+        </form> 
+        
+        <!-- The Table -->
+        <div class="table-responsive">          
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th>Stock#</th>
+                <th>Ticker</th>
+                <th>Price</th>
+                <th id="Tlikes">Likes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="row1">
+                <td>1</td>
+                <td id="Rstock1"></td>
+                <td id="Rprice1"></td>
+                <td id="Rlikes1"></td>
+              </tr>
+              <tr id="row2">
+                <td>2</td>
+                <td id="Rstock2"></td>
+                <td id="Rprice2"></td>
+                <td id="Rlikes2"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="code">
+          <code id="jsonResult"></code>
+        </div>
+        <p class="iex">
+          Data provided for free by <a href="https://iextrading.com/developer/" target="_blank">IEX</a>. View <a href="https://iextrading.com/api-exhibit-a" target="_blank">IEX’s Terms of Use</a>. 
+          JSON will disappear if IEX updates the data.
+        </p>
+        <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#myModal">
+          User Stories
+        </button>
+      </div>
+      </div>
+    </section>  
+	
+    <!-- The Modal -->
+    <section class="container">
+        <div class="modal fade" id="myModal"> 
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <header class="modal-header">
+                <h4 class="modal-title">User Stories</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </header>
+              <div class="modal-body">
+                <section id="userstories">
+                  <ol>
+                    <li>Set the content security policies to only allow loading of scripts and css from your server.</li>
+                    <li>I can <b>GET</b> <code>/api/stock-prices</code> with form data containing a Nasdaq <i>stock</i> ticker and recieve back an object <i>stockData</i>.</li>
+                    <li>In <i>stockData</i>, I can see the <i>stock</i>(string, the ticker), <i>price</i>(decimal in string format), and <i>likes</i>(int).</li>
+                    <li>I can also pass along field <i>like</i> as <b>true</b>(boolean) to have my like added to the stock(s). Only 1 like per ip should be accepted.</li>
+                    <li>If I pass along 2 stocks, the return object will be an array with both stock's info but instead of <i>likes</i>, it will display <i>rel_likes</i>(the difference between the likes on both) on both.</li>
+                    <li>A good way to receive current price is the following external API(replacing 'GOOG' with your stock): <code>https://finance.google.com/finance/info?q=NASDAQ%3aGOOG</code></li>
+                    <li>All 5 functional tests are complete and passing.</li>
+                  </ol>
+                  <h3>Example usage:</h3>
+                  <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog"><code>/api/stock-prices?stock=goog</code></a><br>
+                  <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog&like=true"><code>/api/stock-prices?stock=goog&amp;like=true</code></a><br>
+                  <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog&stock=msft"><code>/api/stock-prices?stock=goog&amp;stock=msft</code></a><br>
+                  <a href="https://stock-price1-project.glitch.me/api/stock-prices?stock=goog&stock=msft&like=true"><code>/api/stock-prices?stock=goog&amp;stock=msft&amp;like=true</code></a><br>
+                  <h3>Example return:</h3>
+                  <code>{"stockData":{"stock":"GOOG", "price":"786.90", "likes":1}}</code><br>
+                  <code>{"stockData":[{"stock":"MSFT", "price":"62.30", "rel_likes":-1}, {"stock":"GOOG", "price":"786.90", "rel_likes":1}]}</code>
+                </section>
+              </div>
+              <footer class="modal-footer">
+                <p>Check out my other projects on <a href="https://github.com/Waymans" target="_blank">Github</a>.</p>
+                <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
+              </footer>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" 
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" 
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" 
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" 
+            crossorigin="anonymous"></script>
+    <script src="/public/index.js"></script>
+  </body>
+</html>
