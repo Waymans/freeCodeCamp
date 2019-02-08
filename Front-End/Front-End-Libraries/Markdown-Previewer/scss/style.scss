@@ -1,0 +1,76 @@
+$box-margin: 1% 5%; 
+$box-padding: 1% 3%;
+$box-shadow: 5px 5px 5px black;
+$bg-color: #95c623;
+$code-color: #e55812;
+$code-bg-color: #efe7da;
+
+.section {
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+}
+.divone {
+    width: 50%;
+    height: 200px;
+    float: left;
+}
+.divtwo {
+    height: 200px;
+}
+body{
+  background-color: #0e4749;
+}
+.h3{
+  color: #95c623;
+  font-size: 30px;
+  margin: 0% 0% 0% 5%;
+  text-shadow: 3px 3px 2px black;
+}
+.edit{
+  margin-bottom: 1%;
+}
+#editor{
+  background-color: $bg-color;
+  box-shadow: $box-shadow;
+  min-height: 480px;
+  width: 83%;
+  overflow: auto;
+  margin: $box-margin;
+  padding: $box-padding;
+  border: none;
+  resize: vertical;
+}
+#preview{
+  border: 5px black;
+  background-color: $bg-color;
+  box-shadow: $box-shadow;
+  min-height: 230px;
+  max-height: 470px;
+  width: 40%;
+  overflow: auto;
+  margin: $box-margin;
+  padding: $box-padding;
+}
+code {
+	color: $code-color;
+	background: $code-bg-color;
+	padding: 0 4px;
+	border-radius: 2px;
+}
+table{
+  border: 1px solid black;
+}
+td{
+  border: 1px solid black;
+}
+th{
+  border: 1px solid black;
+}
+tr{
+  border: 1px solid black;
+}
+img{
+  height: 400px;
+}

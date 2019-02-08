@@ -1,0 +1,24 @@
+.dot{
+  fill: #b0413e;
+}
+.dot:hover {
+  fill: #a5e6ba;
+}
+#title{
+  font-family: monospace;
+}
+#tooltip{
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: auto;
+  padding: 2px;
+  background: lightsteelblue;
+  box-shadow: 1px 1px 10px;
+  line-height: 20px;
+  pointer-events: none;
+}
+.legend{
+  
+}
+

@@ -1,0 +1,34 @@
+.bar{
+  fill: #b0413e;
+}
+.bar:hover {
+  fill: #a5e6ba;
+}
+.title{
+  font-family: monospace;
+  color: white;
+}
+.tooltip{
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  padding: 2px;
+  background: #9ac6c5;
+  left: 25%;
+  top: 25%;
+  border: 1px solid black;
+}
+.axis line{
+  stroke: white;
+}
+.axis path{
+  stroke: white;
+}
+.axis text{
+  fill: white;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>URL Shortener</title>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="/public/style.css" rel="stylesheet" type="text/css">
+   </head>
+   <body>
+      <section class="container">
+        <h1>URL Shortener Microservice</h1>
+        <span>Project from freeCodeCamp. </span>
+        <ol>
+          <li>I can POST a URL to <code>[project_url]/api/shorturl/new</code> and I will receive a shortened URL in the JSON response. Example : <code>{"original_url":"www.google.com", "short_url":a9o2}</code>.</li>
+          <li>If I pass an invalid URL that doesn't follow the valid <code>http(s)://www.example.com(/more/routes)</code> format, the JSON response will contain an error like <code>{"error":"invalid URL"}</code>.</li>
+          <li>When I visit the shortened URL, it will redirect me to my original link.</li>
+        </ol>
+        <span>Can use the submit form to shorten!</span>
+        <p>
+          example: <code>https://url-shortener1-project.glitch.me/api/shorturl/new/https://www.freecodecamp.com</code><br>
+        </p>
+        <form action="api/shorturl/new" method="POST">
+          <label for="url_input">URL to be shortened</label>
+          <input id="url_input" type="text" name="url" value="https://www.freecodecamp.com">
+          <input type="submit" value="POST URL" class="btn">
+        </form>
+        <span>shortened url:</span>
+        <a href="https://url-shortener1-project.glitch.me/api/shorturl/d8e0" target="_blank">
+          https://url-shortener1-project.glitch.me/api/shorturl/d8e0
+        </a>
+        <span>will redirect to: <a href="https://freecodecamp.com" target="_blank">https://www.freecodecamp.com</a></span>
+      </section>
+      <footer>
+        <p>
+          Check out my other projects on <a href="https://www.github.com/Waymans" target="_blank">Github</a>.
+        </p>
+      </footer>
+   </body>
+</html>

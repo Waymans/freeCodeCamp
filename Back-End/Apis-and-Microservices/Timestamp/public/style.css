@@ -1,0 +1,38 @@
+/****** Main Styling ******/
+
+body {
+	font-family: 'Monospace', sans-serif;
+	font-size: 16px;
+	color: #222;
+	background-color: lightsteelblue;
+	text-align: center;
+	line-height: 2em
+}
+
+.container {
+	padding: 0;
+	margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.footer {
+	margin-top: 40px;
+}
+
+code {
+  font-family: monospace;
+  padding: 5px;
+  color: black;
+  background-color: bisque;
+  border: 1px solid maroon;
+}
+a {
+	color: maroon;
+}
